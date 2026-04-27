@@ -47,19 +47,18 @@ class GPT2Model(GPTPreTrainedModel):
     input_shape = input_ids.size()
     seq_length = input_shape[1]
 
-    inputs_embeds = None
+    # Token embeddings
+    inputs_embeds = self.word_embedding(input_ids)
 
-    ### YOUR CODE HERE
-    raise NotImplementedError
-
-
+    # Position embeddings
     pos_ids = self.position_ids[:, :seq_length]
-    pos_embeds = None
+    pos_embeds = self.pos_embedding(pos_ids)
 
-    ### TODO: Use pos_ids to get position embedding from self.pos_embedding into pos_embeds.
-    ###       Then, add two embeddings together; then apply dropout and return.
-    ### YOUR CODE HERE
-    raise NotImplementedError
+    # Add token + position embeddings, then dropout
+    embeddings = inputs_embeds + pos_embeds
+    embeddings = self.embed_dropout(embeddings)
+
+    return embeddings
 
 
   def encode(self, hidden_states, attention_mask):
@@ -100,13 +99,12 @@ class GPT2Model(GPTPreTrainedModel):
 
   def hidden_state_to_token(self, hidden_state):
     """
-    GPT-2 uses weight tying with the input word embeddings. The logits are the dot product between output hidden states
-    and the word embedding weights:
+    hidden_state: [bs, seq_len, hidden_size] or [bs, hidden_size]
 
-      return hidden_state(s) * E^T
+    returns logits over vocabulary:
+    [bs, seq_len, vocab_size] or [bs, vocab_size]
     """
-    ### YOUR CODE HERE
-    raise NotImplementedError
+    return torch.matmul(hidden_state, self.word_embedding.weight.T)
 
 
   @classmethod

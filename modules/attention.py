@@ -32,9 +32,50 @@ class CausalSelfAttention(nn.Module):
     return proj
 
   def attention(self, key, query, value, attention_mask):
+    """
+    key:   [bs, num_heads, seq_len, head_dim]
+    query: [bs, num_heads, seq_len, head_dim]
+    value: [bs, num_heads, seq_len, head_dim]
+    attention_mask: [bs, 1, 1, seq_len]
 
-    ### YOUR CODE HERE
-    raise NotImplementedError
+    output: [bs, seq_len, hidden_size]
+    """
+
+    # 1. Raw attention scores: Q K^T
+    # shape: [bs, num_heads, seq_len, seq_len]
+    attn_scores = torch.matmul(query, key.transpose(-1, -2))
+
+    # 2. Scale by sqrt(d_k)
+    attn_scores = attn_scores / (self.attention_head_size ** 0.5)
+
+    # 3. Add attention mask
+    # Usually attention_mask contains 0 for keep and large negative values for mask.
+    attn_scores = attn_scores + attention_mask
+
+    # 4. Causal mask: prevent attending to future tokens
+    seq_len = query.size(-2)
+    causal_mask = torch.triu(
+        torch.ones(seq_len, seq_len, device=query.device, dtype=torch.bool),
+        diagonal=1
+    )
+
+    attn_scores = attn_scores.masked_fill(causal_mask, float("-inf"))
+
+    # 5. Softmax over keys
+    attn_probs = torch.softmax(attn_scores, dim=-1)
+
+    # 6. Dropout on attention probabilities
+    attn_probs = self.dropout(attn_probs)
+
+    # 7. Weighted sum of values
+    # shape: [bs, num_heads, seq_len, head_dim]
+    context = torch.matmul(attn_probs, value)
+
+    # 8. Put heads back together
+    # [bs, num_heads, seq_len, head_dim] -> [bs, seq_len, hidden_size]
+    context = rearrange(context, "b h t d -> b t (h d)")
+
+    return context
 
 
   def forward(self, hidden_states, attention_mask):
