@@ -1,0 +1,44 @@
+(cs224n_dfp) nicolasackermann@n178-p7 public_cs224n_gpt % python3 classifier.py \
+  --fine-tune-mode last-linear-layer \
+  --batch_size 8 \
+  --epochs 1
+Training Sentiment Classifier on SST...
+load 8544 data from data/ids-sst-train.csv
+load 1101 data from data/ids-sst-dev.csv
+tokenizer_config.json: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26.0/26.0 [00:00<00:00, 12.5kB/s]
+vocab.json: 1.04MB [00:00, 3.18MB/s]
+merges.txt: 456kB [00:00, 1.98MB/s]
+tokenizer.json: 1.36MB [00:00, 3.38MB/s]
+train-0: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1068/1068 [02:27<00:00,  7.23it/s]
+eval: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1068/1068 [01:51<00:00,  9.57it/s]
+eval: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [00:13<00:00, 10.04it/s]
+save the model to sst-classifier.pt
+Epoch 0: train loss :: 1.574, train acc :: 0.388, dev acc :: 0.373
+Evaluating on SST...
+classifier.py:314: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  saved = torch.load(args.filepath)
+load model from sst-classifier.pt
+load 1101 data from data/ids-sst-dev.csv
+eval: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [00:16<00:00,  8.37it/s]
+DONE DEV
+eval: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 277/277 [00:29<00:00,  9.36it/s]
+DONE Test
+dev acc :: 0.373
+Training Sentiment Classifier on cfimdb...
+load 1707 data from data/ids-cfimdb-train.csv
+load 245 data from data/ids-cfimdb-dev.csv
+train-0: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 214/214 [06:56<00:00,  1.95s/it]
+eval: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 214/214 [03:28<00:00,  1.03it/s]
+eval: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 31/31 [00:30<00:00,  1.03it/s]
+save the model to cfimdb-classifier.pt
+Epoch 0: train loss :: 0.868, train acc :: 0.752, dev acc :: 0.727
+Evaluating on cfimdb...
+classifier.py:314: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  saved = torch.load(args.filepath)
+load model from cfimdb-classifier.pt
+load 245 data from data/ids-cfimdb-dev.csv
+eval: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 31/31 [00:34<00:00,  1.10s/it]
+DONE DEV
+eval: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 61/61 [00:57<00:00,  1.06it/s]
+DONE Test
+dev acc :: 0.727
