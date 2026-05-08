@@ -51,7 +51,10 @@ class ParaphraseGPT(nn.Module):
   def __init__(self, args):
     super().__init__()
     self.gpt = GPT2Model.from_pretrained(model=args.model_size, d=args.d, l=args.l, num_heads=args.num_heads)
-    self.paraphrase_detection_head = nn.Linear(args.d, 2)  # Paraphrase detection has two outputs: 1 (yes) or 0 (no).
+    # self.paraphrase_detection_head = nn.Linear(args.d, 2)  # Paraphrase detection has two outputs: 1 (yes) or 0 (no).
+
+    self.yes_token_id = 8505
+    self.no_token_id = 3919
 
     # By default, fine-tune the full model.
     for param in self.gpt.parameters():
@@ -71,8 +74,35 @@ class ParaphraseGPT(nn.Module):
     """
 
     'Takes a batch of sentences and produces embeddings for them.'
-    ### YOUR CODE HERE
-    raise NotImplementedError
+    """
+    Returns logits of shape [batch_size, 2].
+
+    Class order:
+      index 0 = no
+      index 1 = yes
+
+    This matches labels:
+      0 = not paraphrase
+      1 = paraphrase
+    """
+
+    gpt_output = self.gpt(
+      input_ids=input_ids,
+      attention_mask=attention_mask
+    )
+
+    last_token = gpt_output["last_token"]  # [batch_size, hidden_size]
+
+    vocab_logits = self.gpt.hidden_state_to_token(last_token)
+    # [batch_size, vocab_size]
+
+    no_logits = vocab_logits[:, self.no_token_id]
+    yes_logits = vocab_logits[:, self.yes_token_id]
+
+    logits = torch.stack([no_logits, yes_logits], dim=1)
+    # [batch_size, 2]
+
+    return logits
 
 
 
@@ -175,7 +205,7 @@ def test(args):
 
   para_dev_dataloader = DataLoader(para_dev_data, shuffle=False, batch_size=args.batch_size,
                                    collate_fn=para_dev_data.collate_fn)
-  para_test_dataloader = DataLoader(para_test_data, shuffle=True, batch_size=args.batch_size,
+  para_test_dataloader = DataLoader(para_test_data, shuffle=False, batch_size=args.batch_size,
                                     collate_fn=para_test_data.collate_fn)
 
   dev_para_acc, _, dev_para_y_pred, _, dev_para_sent_ids = model_eval_paraphrase(para_dev_dataloader, model, device)

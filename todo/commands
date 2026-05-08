@@ -1,0 +1,29 @@
+python3 paraphrase_detection.py \
+  --use_gpu \
+  --batch_size 4 \
+  --epochs 1 \
+  --lr 1e-5
+
+python3 paraphrase_detection.py \
+  --use_gpu \
+  --batch_size 8 \
+  --epochs 3 \
+  --lr 1e-5
+
+python3 sonnet_generation.py \
+  --use_gpu \
+  --batch_size 4 \
+  --epochs 5 \
+  --lr 1e-5 \
+  --temperature 0.8 \
+  --top_p 0.9
+
+!! lower temperature usually makes output less random and more coherent. higher temperature makes it more creative but also more chaotic.
+
+python3 sonnet_generation.py \
+  --use_gpu \
+  --batch_size 4 \
+  --epochs 10 \
+  --lr 5e-6 \
+  --temperature 0.7 \
+  --top_p 0.85

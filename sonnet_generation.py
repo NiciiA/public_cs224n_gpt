@@ -60,8 +60,23 @@ class SonnetGPT(nn.Module):
     not just the last token! This will allow our model to learn the natural language distribution that composes sonnets,
     not just the distribution over next tokens for the last token!
     """
-    ### YOUR CODE HERE
-    raise NotImplementedError
+    """
+        input_ids: [batch_size, seq_len]
+        attention_mask: [batch_size, seq_len]
+
+        returns:
+          logits: [batch_size, seq_len, vocab_size]
+        """
+
+    gpt_output = self.gpt(
+      input_ids=input_ids,
+      attention_mask=attention_mask
+    )
+
+    hidden_states = gpt_output["last_hidden_state"]
+    logits = self.gpt.hidden_state_to_token(hidden_states)
+
+    return logits
 
 
   def get_device(self):
@@ -169,7 +184,12 @@ def train(args):
       logits = model(b_ids, b_mask)
       logits = rearrange(logits[:, :-1].contiguous(), 'b t d -> (b t) d')  # Ignore the last prediction in the sequence.
       labels = b_ids[:, 1:].contiguous().flatten()  # Ignore the first token to compose the labels.
-      loss = F.cross_entropy(logits, labels, reduction='mean')
+      loss = F.cross_entropy(
+        logits,
+        labels,
+        ignore_index=model.tokenizer.pad_token_id,
+        reduction='mean'
+      )
       loss.backward()
       optimizer.step()
 
