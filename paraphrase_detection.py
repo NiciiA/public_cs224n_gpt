@@ -242,6 +242,14 @@ def get_args():
                       help="The model size as specified on hugging face. DO NOT use the xl model.",
                       choices=['gpt2', 'gpt2-medium', 'gpt2-large'], default='gpt2')
 
+  parser.add_argument("--attention_type", type=str,
+                      choices=["full", "sliding", "flash"],
+                      default="full")
+
+  parser.add_argument("--attention_window", type=int, default=32)
+
+  parser.add_argument("--linformer_k", type=int, default=64)
+
   args = parser.parse_args()
   return args
 

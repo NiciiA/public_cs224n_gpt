@@ -3,6 +3,8 @@ import torch
 from einops import rearrange
 from torch import nn
 
+import torch.nn.functional as F
+
 
 class CausalSelfAttention(nn.Module):
   def __init__(self, config):
@@ -20,6 +22,14 @@ class CausalSelfAttention(nn.Module):
     # implementation of transformer. Although it is a bit unusual, we empirically
     # observe that it yields better performance.
     self.dropout = nn.Dropout(config.attention_probs_dropout_prob)
+
+    self.attention_type = getattr(config, "attention_type", "full")
+    self.attention_window = getattr(config, "attention_window", 32)
+    self.linformer_k = getattr(config, "linformer_k", 64)
+
+    if self.attention_type == "linformer":
+      self.linformer_key = nn.Linear(config.max_position_embeddings, self.linformer_k)
+      self.linformer_value = nn.Linear(config.max_position_embeddings, self.linformer_k)
 
   def transform(self, x, linear_layer):
     # The corresponding linear_layer of k, v, q are used to project the hidden_state (x).
@@ -41,38 +51,97 @@ class CausalSelfAttention(nn.Module):
     output: [bs, seq_len, hidden_size]
     """
 
-    # 1. Raw attention scores: Q K^T
-    # shape: [bs, num_heads, seq_len, seq_len]
-    attn_scores = torch.matmul(query, key.transpose(-1, -2))
+    # flash version
+    # using PyTorch optimized scaled dot-product attention instead of CUDA self written stuff
+    if self.attention_type == "flash":
+      seq_len = query.size(-2)
 
-    # 2. Scale by sqrt(d_k)
-    attn_scores = attn_scores / (self.attention_head_size ** 0.5)
-
-    # 3. Add attention mask
-    # Usually attention_mask contains 0 for keep and large negative values for mask.
-    attn_scores = attn_scores + attention_mask
-
-    # 4. Causal mask: prevent attending to future tokens
-    seq_len = query.size(-2)
-    causal_mask = torch.triu(
+      # causal mask: future positions get -inf
+      causal_mask = torch.triu(
         torch.ones(seq_len, seq_len, device=query.device, dtype=torch.bool),
         diagonal=1
-    )
+      )
 
+      causal_bias = torch.zeros(seq_len, seq_len, device=query.device, dtype=query.dtype)
+      causal_bias = causal_bias.masked_fill(causal_mask, float("-inf"))
+
+      # attention_mask: [bs, 1, 1, seq_len]
+      # causal_bias:    [seq_len, seq_len]
+      # combined mask broadcasts to [bs, heads, seq_len, seq_len]
+      combined_mask = attention_mask.to(dtype=query.dtype) + causal_bias
+
+      context = F.scaled_dot_product_attention(
+        query,
+        key,
+        value,
+        attn_mask=combined_mask,
+        dropout_p=self.dropout.p if self.training else 0.0,
+        is_causal=False
+      )
+
+      context = rearrange(context, "b h t d -> b t (h d)")
+      return context
+
+    if self.attention_type == "linformer":
+      b, h, t, d = query.shape
+      k_proj = min(self.linformer_k, t)
+
+      # key/value: [b, h, t, d] -> [b, h, d, t]
+      key_t = key.transpose(-1, -2)
+      value_t = value.transpose(-1, -2)
+
+      # use only first t input weights and first k_proj output dimensions
+      E = self.linformer_key.weight[:k_proj, :t]  # [k_proj, t]
+      F_proj = self.linformer_value.weight[:k_proj, :t]
+
+      # project sequence length t -> k_proj
+      key_proj = torch.matmul(key_t, E.T).transpose(-1, -2)
+      value_proj = torch.matmul(value_t, F_proj.T).transpose(-1, -2)
+
+      # key_proj/value_proj: [b, h, k_proj, d]
+      attn_scores = torch.matmul(query, key_proj.transpose(-1, -2))
+      attn_scores = attn_scores / (self.attention_head_size ** 0.5)
+
+      attn_probs = torch.softmax(attn_scores, dim=-1)
+      attn_probs = self.dropout(attn_probs)
+
+      context = torch.matmul(attn_probs, value_proj)
+      context = rearrange(context, "b h t d -> b t (h d)")
+      return context
+
+    # manual, full / sliding window attention
+    attn_scores = torch.matmul(query, key.transpose(-1, -2))
+    attn_scores = attn_scores / (self.attention_head_size ** 0.5)
+
+    seq_len = query.size(-2)
+
+    # causal mask: block future tokens
+    causal_mask = torch.triu(
+      torch.ones(seq_len, seq_len, device=query.device, dtype=torch.bool),
+      diagonal=1
+    )
     attn_scores = attn_scores.masked_fill(causal_mask, float("-inf"))
 
-    # 5. Softmax over keys
-    attn_probs = torch.softmax(attn_scores, dim=-1)
+    # padding mask
+    attn_scores = attn_scores + attention_mask
 
-    # 6. Dropout on attention probabilities
+    # sliding window mask, token i can only attend to tokens in [i-window, i]
+    if self.attention_type == "sliding":
+      w = self.attention_window
+
+      positions = torch.arange(seq_len, device=query.device)
+      i = positions[:, None]
+      j = positions[None, :]
+
+      sliding_mask = (i - j) > w
+      sliding_mask = sliding_mask[None, None, :, :]  # [1, 1, seq_len, seq_len]
+
+      attn_scores = attn_scores.masked_fill(sliding_mask, float("-inf"))
+
+    attn_probs = torch.softmax(attn_scores, dim=-1)
     attn_probs = self.dropout(attn_probs)
 
-    # 7. Weighted sum of values
-    # shape: [bs, num_heads, seq_len, head_dim]
     context = torch.matmul(attn_probs, value)
-
-    # 8. Put heads back together
-    # [bs, num_heads, seq_len, head_dim] -> [bs, seq_len, hidden_size]
     context = rearrange(context, "b h t d -> b t (h d)")
 
     return context

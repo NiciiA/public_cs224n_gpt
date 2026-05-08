@@ -27,3 +27,21 @@ python3 sonnet_generation.py \
   --lr 5e-6 \
   --temperature 0.7 \
   --top_p 0.85
+
+
+
+-- different attention type
+
+python3 paraphrase_detection.py --use_gpu --attention_type full --epochs 3 --batch_size 8 --lr 1e-5
+
+python3 paraphrase_detection.py --use_gpu --attention_type sliding --attention_window 32 --epochs 3 --batch_size 8 --lr 1e-5
+
+python3 paraphrase_detection.py --use_gpu --attention_type flash --epochs 3 --batch_size 8 --lr 1e-5
+
+python paraphrase_detection.py \
+  --use_gpu \
+  --attention_type linformer \
+  --linformer_k 64 \
+  --epochs 3 \
+  --batch_size 8 \
+  --lr 1e-5
