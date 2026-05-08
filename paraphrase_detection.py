@@ -92,7 +92,11 @@ def save_model(model, optimizer, args, filepath):
 
 def train(args):
   """Train GPT-2 for paraphrase detection on the Quora dataset."""
-  device = torch.device('cuda') if args.use_gpu else torch.device('cpu')
+  device = (
+    torch.device("cuda") if args.use_gpu and torch.cuda.is_available()
+    else torch.device("mps") if args.use_gpu and torch.backends.mps.is_available()
+    else torch.device("cpu")
+)
   # Create the data and its corresponding datasets and dataloader.
   para_train_data = load_paraphrase_data(args.para_train)
   para_dev_data = load_paraphrase_data(args.para_dev)
@@ -150,7 +154,11 @@ def train(args):
 @torch.no_grad()
 def test(args):
   """Evaluate your model on the dev and test datasets; save the predictions to disk."""
-  device = torch.device('cuda') if args.use_gpu else torch.device('cpu')
+  device = (
+    torch.device("cuda") if args.use_gpu and torch.cuda.is_available()
+    else torch.device("mps") if args.use_gpu and torch.backends.mps.is_available()
+    else torch.device("cpu")
+)
   saved = torch.load(args.filepath)
 
   model = ParaphraseGPT(saved['args'])
