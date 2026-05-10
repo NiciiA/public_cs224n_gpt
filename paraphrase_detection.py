@@ -163,6 +163,7 @@ def train(args):
       optimizer.zero_grad()
       logits = model(b_ids, b_mask)
       preds = torch.argmax(logits, dim=1)
+      labels = (labels == 8505).long()
       loss = F.cross_entropy(logits, labels, reduction='mean')
       loss.backward()
       optimizer.step()
