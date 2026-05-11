@@ -198,12 +198,19 @@ def train(args):
 
     train_loss = train_loss / num_batches
     print(f"Epoch {epoch}: train loss :: {train_loss :.3f}.")
-    print('Generating several output sonnets...')
-    model.eval()
-    for batch in held_out_sonnet_dataset:
-      encoding = model.tokenizer(batch[1], return_tensors='pt', padding=True, truncation=True).to(device)
-      output = model.generate(encoding['input_ids'], temperature=args.temperature, top_p=args.top_p)
-      print(f'{batch[1]}{output[1]}\n\n')
+    if epoch == args.epochs - 1:
+      print('Generating several output sonnets...')
+      model.eval()
+      for i, batch in enumerate(held_out_sonnet_dataset):
+        if i > 2:  # limit to 3 samples
+          break
+        encoding = model.tokenizer(batch[1], return_tensors='pt', padding=True, truncation=True).to(device)
+        output = model.generate(
+          encoding['input_ids'],
+          temperature=args.temperature,
+          top_p=args.top_p
+        )
+        print(f'{batch[1]}{output[1]}\n\n')
 
     # TODO: consider a stopping condition to prevent overfitting on the small dataset of sonnets.
     save_model(model, optimizer, args, f'{epoch}_{args.filepath}')
