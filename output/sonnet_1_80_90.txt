@@ -1,0 +1,73 @@
+!python3 sonnet_generation.py \
+  --use_gpu \
+  --batch_size 16 \
+  --epochs 1 \
+  --lr 1e-5 \
+  --temperature 0.8 \
+  --top_p 0.9 \
+  > logs/sonnet_smoke.log 2>&1
+
+2026-05-11 08:25:51.354554: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+train-0:   0%|          | 0/9 [00:00<?, ?it/s]
+train-0:  11%|█         | 1/9 [00:01<00:10,  1.29s/it]
+train-0:  22%|██▏       | 2/9 [00:01<00:06,  1.07it/s]
+train-0:  33%|███▎      | 3/9 [00:02<00:04,  1.20it/s]
+train-0:  44%|████▍     | 4/9 [00:03<00:03,  1.31it/s]
+train-0:  56%|█████▌    | 5/9 [00:03<00:02,  1.38it/s]
+train-0:  67%|██████▋   | 6/9 [00:04<00:02,  1.39it/s]
+train-0:  78%|███████▊  | 7/9 [00:05<00:01,  1.37it/s]
+train-0:  89%|████████▉ | 8/9 [00:06<00:00,  1.40it/s]
+train-0: 100%|██████████| 9/9 [00:06<00:00,  1.86it/s]
+train-0: 100%|██████████| 9/9 [00:06<00:00,  1.43it/s]
+
+The little love-god, lying once asleep,
+Laid by his side his heart-inflaming brand,
+Whilst many nymphs that vowed chaste life to keep,
+And slept with such kind, gentle young lovers,
+O brave, wise, modest maidens, how love and desire made,
+He who, in thy most unself, made love.
+Their love and love.
+It was a love that sweetly offered their hearts
+And so that their eyes felt.
+O gracious, gentle, beautiful maidens, how love and desire made,
+When with a thousand many love-bonded, life-giving love,
+And with a thousand many love-bonded, I live with you,
+Whose love will end my life.
+What love
+
+
+When my love swears that she is made of truth,
+I do believe her, though I know she lies,
+That she might think me some untutored youth,
+Thou hast made me a bastard,
+Not so long ago I had been cursed with the maid.
+I must be worse off now, I may be again
+And leave my children to inherit my daughters' deaths.
+And the sick, who have not no wonder,
+And those who are still awake, will be put to death,
+They will not be able to live, but my father's children,
+They will be disposed of and sent away as a secret to the good.
+And he that kills the child,
+The child that kills his father,
+A man that has long been a thief,
+
+
+Two loves I have, of comfort and despair,
+That like two spirits do suggest me still.
+My better angel is a man right fair,
+Of my will not mistaken, of my mind pure,
+Nor my love but of thee.
+And all my love is not in vain;
+And all my love I will gain,
+By my love all my heart shall see.
+There is no end to my hopes,
+All that shall not be vain, that I may see
+Then my ways of happiness and happiness shall lead.
+Then my love shall not be from nothing,
+Nor my love shall be from thee.
+And now shall I have my way, that I may see thee
+That is my name in your name,
+And that may be
+
