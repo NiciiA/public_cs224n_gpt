@@ -1,0 +1,60 @@
+[
+  {
+    "name": "run0_full_ep1_lr1em05",
+    "minutes": 22.320094072818755,
+    "returncode": 0,
+    "log": "logs/run0_full_ep1_lr1em05.log",
+    "attention_type": "full",
+    "epochs": 1,
+    "lr": 1e-05
+  },
+  {
+    "name": "run1_flash_ep1_lr1em05",
+    "minutes": 21.21388033628464,
+    "returncode": 0,
+    "log": "logs/run1_flash_ep1_lr1em05.log",
+    "attention_type": "flash",
+    "epochs": 1,
+    "lr": 1e-05
+  },
+  {
+    "name": "run2_sliding_ep1_lr1em05_w32",
+    "minutes": 22.573979071776073,
+    "returncode": 0,
+    "log": "logs/run2_sliding_ep1_lr1em05_w32.log",
+    "attention_type": "sliding",
+    "attention_window": 32,
+    "epochs": 1,
+    "lr": 1e-05
+  },
+  {
+    "name": "run3_sliding_ep1_lr1em05_w64",
+    "minutes": 22.550367923577628,
+    "returncode": 0,
+    "log": "logs/run3_sliding_ep1_lr1em05_w64.log",
+    "attention_type": "sliding",
+    "attention_window": 64,
+    "epochs": 1,
+    "lr": 1e-05
+  },
+  {
+    "name": "run4_linformer_ep1_lr1em05_k64",
+    "minutes": 22.170143500963846,
+    "returncode": 0,
+    "log": "logs/run4_linformer_ep1_lr1em05_k64.log",
+    "attention_type": "linformer",
+    "linformer_k": 64,
+    "epochs": 1,
+    "lr": 1e-05
+  },
+  {
+    "name": "run5_linformer_ep1_lr1em05_k128",
+    "minutes": 22.684434882799785,
+    "returncode": 0,
+    "log": "logs/run5_linformer_ep1_lr1em05_k128.log",
+    "attention_type": "linformer",
+    "linformer_k": 128,
+    "epochs": 1,
+    "lr": 1e-05
+  }
+]
