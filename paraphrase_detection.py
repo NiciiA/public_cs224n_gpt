@@ -163,7 +163,6 @@ def train(args):
       optimizer.zero_grad()
       logits = model(b_ids, b_mask)
       preds = torch.argmax(logits, dim=1)
-      labels = (labels == 8505).long()
       loss = F.cross_entropy(logits, labels, reduction='mean')
       loss.backward()
       optimizer.step()
@@ -237,6 +236,7 @@ def get_args():
   parser.add_argument("--epochs", type=int, default=10)
   parser.add_argument("--use_gpu", action='store_true')
 
+  parser.add_argument("--max_length", type=int, default=128)
   parser.add_argument("--batch_size", help='sst: 64, cfimdb: 8 can fit a 12GB GPU', type=int, default=8)
   parser.add_argument("--lr", type=float, help="learning rate", default=1e-5)
   parser.add_argument("--model_size", type=str,
@@ -244,7 +244,7 @@ def get_args():
                       choices=['gpt2', 'gpt2-medium', 'gpt2-large'], default='gpt2')
 
   parser.add_argument("--attention_type", type=str,
-                      choices=["full", "sliding", "flash"],
+                      choices=["full", "sliding", "flash", "linformer"],
                       default="full")
 
   parser.add_argument("--attention_window", type=int, default=32)
