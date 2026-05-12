@@ -1,0 +1,287 @@
+2026-05-11 22:28:04.052588: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+train-0:   0%|          | 0/9 [00:00<?, ?it/s]train-0:  11%|█         | 1/9 [00:01<00:08,  1.06s/it]train-0:  22%|██▏       | 2/9 [00:01<00:06,  1.07it/s]train-0:  33%|███▎      | 3/9 [00:02<00:05,  1.10it/s]train-0:  44%|████▍     | 4/9 [00:03<00:04,  1.16it/s]train-0:  56%|█████▌    | 5/9 [00:04<00:03,  1.18it/s]train-0:  67%|██████▋   | 6/9 [00:05<00:02,  1.16it/s]train-0:  78%|███████▊  | 7/9 [00:06<00:01,  1.13it/s]train-0:  89%|████████▉ | 8/9 [00:07<00:00,  1.15it/s]train-0: 100%|██████████| 9/9 [00:07<00:00,  1.53it/s]train-0: 100%|██████████| 9/9 [00:07<00:00,  1.24it/s]
+Epoch 0: train loss :: 4.989.
+save the model to 0_15-1e-05-sonnet.pt
+train-1:   0%|          | 0/9 [00:00<?, ?it/s]train-1:  11%|█         | 1/9 [00:00<00:06,  1.18it/s]train-1:  22%|██▏       | 2/9 [00:01<00:05,  1.18it/s]train-1:  33%|███▎      | 3/9 [00:02<00:05,  1.17it/s]train-1:  44%|████▍     | 4/9 [00:03<00:04,  1.19it/s]train-1:  56%|█████▌    | 5/9 [00:04<00:03,  1.16it/s]train-1:  67%|██████▋   | 6/9 [00:05<00:02,  1.14it/s]train-1:  78%|███████▊  | 7/9 [00:06<00:01,  1.12it/s]train-1:  89%|████████▉ | 8/9 [00:07<00:00,  1.09it/s]train-1: 100%|██████████| 9/9 [00:07<00:00,  1.44it/s]train-1: 100%|██████████| 9/9 [00:07<00:00,  1.24it/s]
+Epoch 1: train loss :: 4.773.
+save the model to 1_15-1e-05-sonnet.pt
+train-2:   0%|          | 0/9 [00:00<?, ?it/s]train-2:  11%|█         | 1/9 [00:00<00:07,  1.12it/s]train-2:  22%|██▏       | 2/9 [00:01<00:06,  1.09it/s]train-2:  33%|███▎      | 3/9 [00:02<00:05,  1.11it/s]train-2:  44%|████▍     | 4/9 [00:03<00:04,  1.10it/s]train-2:  56%|█████▌    | 5/9 [00:04<00:03,  1.09it/s]train-2:  67%|██████▋   | 6/9 [00:05<00:02,  1.10it/s]train-2:  78%|███████▊  | 7/9 [00:06<00:01,  1.09it/s]train-2:  89%|████████▉ | 8/9 [00:07<00:00,  1.07it/s]train-2: 100%|██████████| 9/9 [00:07<00:00,  1.43it/s]train-2: 100%|██████████| 9/9 [00:07<00:00,  1.19it/s]
+Epoch 2: train loss :: 4.655.
+save the model to 2_15-1e-05-sonnet.pt
+train-3:   0%|          | 0/9 [00:00<?, ?it/s]train-3:  11%|█         | 1/9 [00:00<00:07,  1.09it/s]train-3:  22%|██▏       | 2/9 [00:01<00:06,  1.13it/s]train-3:  33%|███▎      | 3/9 [00:02<00:05,  1.12it/s]train-3:  44%|████▍     | 4/9 [00:03<00:04,  1.10it/s]train-3:  56%|█████▌    | 5/9 [00:04<00:03,  1.10it/s]train-3:  67%|██████▋   | 6/9 [00:05<00:02,  1.11it/s]train-3:  78%|███████▊  | 7/9 [00:06<00:01,  1.12it/s]train-3:  89%|████████▉ | 8/9 [00:07<00:00,  1.14it/s]train-3: 100%|██████████| 9/9 [00:07<00:00,  1.51it/s]train-3: 100%|██████████| 9/9 [00:07<00:00,  1.23it/s]
+Epoch 3: train loss :: 4.585.
+save the model to 3_15-1e-05-sonnet.pt
+train-4:   0%|          | 0/9 [00:00<?, ?it/s]train-4:  11%|█         | 1/9 [00:00<00:07,  1.03it/s]train-4:  22%|██▏       | 2/9 [00:01<00:06,  1.08it/s]train-4:  33%|███▎      | 3/9 [00:02<00:05,  1.11it/s]train-4:  44%|████▍     | 4/9 [00:03<00:04,  1.12it/s]train-4:  56%|█████▌    | 5/9 [00:04<00:03,  1.11it/s]train-4:  67%|██████▋   | 6/9 [00:05<00:02,  1.10it/s]train-4:  78%|███████▊  | 7/9 [00:06<00:01,  1.09it/s]train-4:  89%|████████▉ | 8/9 [00:07<00:00,  1.10it/s]train-4: 100%|██████████| 9/9 [00:07<00:00,  1.44it/s]train-4: 100%|██████████| 9/9 [00:07<00:00,  1.20it/s]
+Epoch 4: train loss :: 4.476.
+save the model to 4_15-1e-05-sonnet.pt
+train-5:   0%|          | 0/9 [00:00<?, ?it/s]train-5:  11%|█         | 1/9 [00:00<00:07,  1.13it/s]train-5:  22%|██▏       | 2/9 [00:01<00:06,  1.15it/s]train-5:  33%|███▎      | 3/9 [00:02<00:05,  1.13it/s]train-5:  44%|████▍     | 4/9 [00:03<00:04,  1.10it/s]train-5:  56%|█████▌    | 5/9 [00:04<00:03,  1.10it/s]train-5:  67%|██████▋   | 6/9 [00:05<00:02,  1.11it/s]train-5:  78%|███████▊  | 7/9 [00:06<00:01,  1.10it/s]train-5:  89%|████████▉ | 8/9 [00:07<00:00,  1.11it/s]train-5: 100%|██████████| 9/9 [00:07<00:00,  1.47it/s]train-5: 100%|██████████| 9/9 [00:07<00:00,  1.22it/s]
+Epoch 5: train loss :: 4.468.
+save the model to 5_15-1e-05-sonnet.pt
+train-6:   0%|          | 0/9 [00:00<?, ?it/s]train-6:  11%|█         | 1/9 [00:00<00:07,  1.11it/s]train-6:  22%|██▏       | 2/9 [00:01<00:06,  1.13it/s]train-6:  33%|███▎      | 3/9 [00:02<00:05,  1.13it/s]train-6:  44%|████▍     | 4/9 [00:03<00:04,  1.13it/s]train-6:  56%|█████▌    | 5/9 [00:04<00:03,  1.11it/s]train-6:  67%|██████▋   | 6/9 [00:05<00:02,  1.08it/s]train-6:  78%|███████▊  | 7/9 [00:06<00:01,  1.08it/s]train-6:  89%|████████▉ | 8/9 [00:07<00:00,  1.07it/s]train-6: 100%|██████████| 9/9 [00:07<00:00,  1.42it/s]train-6: 100%|██████████| 9/9 [00:07<00:00,  1.20it/s]
+Epoch 6: train loss :: 4.407.
+save the model to 6_15-1e-05-sonnet.pt
+train-7:   0%|          | 0/9 [00:00<?, ?it/s]train-7:  11%|█         | 1/9 [00:00<00:07,  1.04it/s]train-7:  22%|██▏       | 2/9 [00:01<00:06,  1.08it/s]train-7:  33%|███▎      | 3/9 [00:02<00:05,  1.09it/s]train-7:  44%|████▍     | 4/9 [00:03<00:04,  1.11it/s]train-7:  56%|█████▌    | 5/9 [00:04<00:03,  1.12it/s]train-7:  67%|██████▋   | 6/9 [00:05<00:02,  1.13it/s]train-7:  78%|███████▊  | 7/9 [00:06<00:01,  1.11it/s]train-7:  89%|████████▉ | 8/9 [00:07<00:00,  1.11it/s]train-7: 100%|██████████| 9/9 [00:07<00:00,  1.48it/s]train-7: 100%|██████████| 9/9 [00:07<00:00,  1.21it/s]
+Epoch 7: train loss :: 4.392.
+save the model to 7_15-1e-05-sonnet.pt
+train-8:   0%|          | 0/9 [00:00<?, ?it/s]train-8:  11%|█         | 1/9 [00:00<00:06,  1.15it/s]train-8:  22%|██▏       | 2/9 [00:01<00:05,  1.20it/s]train-8:  33%|███▎      | 3/9 [00:02<00:05,  1.18it/s]train-8:  44%|████▍     | 4/9 [00:03<00:04,  1.15it/s]train-8:  56%|█████▌    | 5/9 [00:04<00:03,  1.11it/s]train-8:  67%|██████▋   | 6/9 [00:05<00:02,  1.11it/s]train-8:  78%|███████▊  | 7/9 [00:06<00:01,  1.10it/s]train-8:  89%|████████▉ | 8/9 [00:07<00:00,  1.09it/s]train-8: 100%|██████████| 9/9 [00:07<00:00,  1.45it/s]train-8: 100%|██████████| 9/9 [00:07<00:00,  1.23it/s]
+Epoch 8: train loss :: 4.319.
+save the model to 8_15-1e-05-sonnet.pt
+train-9:   0%|          | 0/9 [00:00<?, ?it/s]train-9:  11%|█         | 1/9 [00:00<00:07,  1.12it/s]train-9:  22%|██▏       | 2/9 [00:01<00:06,  1.10it/s]train-9:  33%|███▎      | 3/9 [00:02<00:05,  1.13it/s]train-9:  44%|████▍     | 4/9 [00:03<00:04,  1.11it/s]train-9:  56%|█████▌    | 5/9 [00:04<00:03,  1.07it/s]train-9:  67%|██████▋   | 6/9 [00:05<00:02,  1.07it/s]train-9:  78%|███████▊  | 7/9 [00:06<00:01,  1.06it/s]train-9:  89%|████████▉ | 8/9 [00:07<00:00,  1.07it/s]train-9: 100%|██████████| 9/9 [00:07<00:00,  1.42it/s]train-9: 100%|██████████| 9/9 [00:07<00:00,  1.18it/s]
+Epoch 9: train loss :: 4.297.
+save the model to 9_15-1e-05-sonnet.pt
+train-10:   0%|          | 0/9 [00:00<?, ?it/s]train-10:  11%|█         | 1/9 [00:00<00:06,  1.17it/s]train-10:  22%|██▏       | 2/9 [00:01<00:06,  1.16it/s]train-10:  33%|███▎      | 3/9 [00:02<00:05,  1.17it/s]train-10:  44%|████▍     | 4/9 [00:03<00:04,  1.15it/s]train-10:  56%|█████▌    | 5/9 [00:04<00:03,  1.14it/s]train-10:  67%|██████▋   | 6/9 [00:05<00:02,  1.13it/s]train-10:  78%|███████▊  | 7/9 [00:06<00:01,  1.14it/s]train-10:  89%|████████▉ | 8/9 [00:07<00:00,  1.11it/s]train-10: 100%|██████████| 9/9 [00:07<00:00,  1.48it/s]train-10: 100%|██████████| 9/9 [00:07<00:00,  1.24it/s]
+Epoch 10: train loss :: 4.271.
+save the model to 10_15-1e-05-sonnet.pt
+train-11:   0%|          | 0/9 [00:00<?, ?it/s]train-11:  11%|█         | 1/9 [00:00<00:07,  1.14it/s]train-11:  22%|██▏       | 2/9 [00:01<00:06,  1.09it/s]train-11:  33%|███▎      | 3/9 [00:02<00:05,  1.09it/s]train-11:  44%|████▍     | 4/9 [00:03<00:04,  1.11it/s]train-11:  56%|█████▌    | 5/9 [00:04<00:03,  1.10it/s]train-11:  67%|██████▋   | 6/9 [00:05<00:02,  1.09it/s]train-11:  78%|███████▊  | 7/9 [00:06<00:01,  1.08it/s]train-11:  89%|████████▉ | 8/9 [00:07<00:00,  1.09it/s]train-11: 100%|██████████| 9/9 [00:07<00:00,  1.45it/s]train-11: 100%|██████████| 9/9 [00:07<00:00,  1.20it/s]
+Epoch 11: train loss :: 4.204.
+save the model to 11_15-1e-05-sonnet.pt
+train-12:   0%|          | 0/9 [00:00<?, ?it/s]train-12:  11%|█         | 1/9 [00:00<00:07,  1.12it/s]train-12:  22%|██▏       | 2/9 [00:01<00:06,  1.15it/s]train-12:  33%|███▎      | 3/9 [00:02<00:05,  1.12it/s]train-12:  44%|████▍     | 4/9 [00:03<00:04,  1.11it/s]train-12:  56%|█████▌    | 5/9 [00:04<00:03,  1.10it/s]train-12:  67%|██████▋   | 6/9 [00:05<00:02,  1.08it/s]train-12:  78%|███████▊  | 7/9 [00:06<00:01,  1.09it/s]train-12:  89%|████████▉ | 8/9 [00:07<00:00,  1.09it/s]train-12: 100%|██████████| 9/9 [00:07<00:00,  1.45it/s]train-12: 100%|██████████| 9/9 [00:07<00:00,  1.21it/s]
+Epoch 12: train loss :: 4.206.
+save the model to 12_15-1e-05-sonnet.pt
+train-13:   0%|          | 0/9 [00:00<?, ?it/s]train-13:  11%|█         | 1/9 [00:00<00:06,  1.14it/s]train-13:  22%|██▏       | 2/9 [00:01<00:06,  1.10it/s]train-13:  33%|███▎      | 3/9 [00:02<00:05,  1.10it/s]train-13:  44%|████▍     | 4/9 [00:03<00:04,  1.12it/s]train-13:  56%|█████▌    | 5/9 [00:04<00:03,  1.11it/s]train-13:  67%|██████▋   | 6/9 [00:05<00:02,  1.10it/s]train-13:  78%|███████▊  | 7/9 [00:06<00:01,  1.13it/s]train-13:  89%|████████▉ | 8/9 [00:07<00:00,  1.13it/s]train-13: 100%|██████████| 9/9 [00:07<00:00,  1.50it/s]train-13: 100%|██████████| 9/9 [00:07<00:00,  1.23it/s]
+Epoch 13: train loss :: 4.163.
+save the model to 13_15-1e-05-sonnet.pt
+train-14:   0%|          | 0/9 [00:00<?, ?it/s]train-14:  11%|█         | 1/9 [00:00<00:07,  1.13it/s]train-14:  22%|██▏       | 2/9 [00:01<00:06,  1.08it/s]train-14:  33%|███▎      | 3/9 [00:02<00:05,  1.12it/s]train-14:  44%|████▍     | 4/9 [00:03<00:04,  1.10it/s]train-14:  56%|█████▌    | 5/9 [00:04<00:03,  1.09it/s]train-14:  67%|██████▋   | 6/9 [00:05<00:02,  1.10it/s]train-14:  78%|███████▊  | 7/9 [00:06<00:01,  1.10it/s]train-14:  89%|████████▉ | 8/9 [00:07<00:00,  1.08it/s]train-14: 100%|██████████| 9/9 [00:07<00:00,  1.44it/s]train-14: 100%|██████████| 9/9 [00:07<00:00,  1.20it/s]
+Epoch 14: train loss :: 4.144.
+Generating several output sonnets...
+Those lips that Love's own hand did make
+Breathed forth the sound that said "I hate"
+To me that languished for her sake;se lips that Love's own hand did make
+Breathed forth the sound that said "I hate"
+To me that languished for her sake;
+But what doth that wrong say
+To me, "I love you"?
+'Tis not to love that I should say,
+But to love, "I love you"
+When you are the first to love me.
+"Give me all you have,
+And I will give you all I have,
+When you are my dear friend,
+To keep your love alive,
+And to love you more than I am."
+  So, my dear friends, it is well that you should tell
+  If I say you love me, but you do not love me.
+  I love you
+
+
+Poor soul, the center of my sinful earth,
+Pressed with these rebel powers that thee array,
+Why dost thou pine within and suffer dearth,r soul, the center of my sinful earth,
+Pressed with these rebel powers that thee array,
+Why dost thou pine within and suffer dearth,
+And, like that, hast to lend thine hand to besiege,
+Or dost thou, as thou, bear in hand, so much of mine,
+And hast the sweetest of your all-conquering grace?
+  But, if thou wilt find me, I will lend thee thy hand.
+  Thou art my life, my treasure, my love, and my joy,
+  To whom my love is given, and thy pleasure's love is given.
+  I have not taken my wife, nor my child, nor my son,
+  And my love is to thee my sweet
+
+
+My love is as a fever, longing still
+For that which longer nurseth the disease,
+Feeding on that which doth preserve the ill,love is as a fever, longing still
+For that which longer nurseth the disease,
+Feeding on that which doth preserve the ill,
+That as she hath the fever she gives her sickle,
+When the sickle dies, she is gone, and the sickle shall have her
+In all her dying days, and to this day she in her own
+Plagues her like a woe to those whom she hath borne
+And dies in the sad state.
+  If she hath a sickle, she is dead; if she has a sickle,
+  The sickle is dead.  The sickle is dead.  The sickle is dead.  The sickle is dead.           
+
+
+save the model to 14_15-1e-05-sonnet.pt
+Those lips that Love's own hand did make
+Breathed forth the sound that said "I hate"
+To me that languished for her sake;
+Now that I am no longer, I do not need her to fear;
+Then love's voice did me take,
+And even when I do say "I love you,"
+Then I do not want her to fear;
+Then I love you because you did love me,
+And you are not afraid of me.
+  And if I would love you,
+  Then I would love you more than I love you.
+  And if I did love you, I would not love you more than you.
+   And if I did love you, I would not love you more than you.
+ 
+
+
+Poor soul, the center of my sinful earth,
+Pressed with these rebel powers that thee array,
+Why dost thou pine within and suffer dearth,
+How much do thy enemies so often fight,
+And how canst thou, thyself, which I love,
+O, so dear and true my love,
+Even now in my bosom, do thy dear thoughts sing?
+O, what dost thou do that, so dear and true?
+  My heart, thou, is my heart,
+  I love thee with all thy strength,
+  And thou, my love, that shouldst make me die,
+  As thy beauty should make thee happy.
+  And thou, my love, my love, the true love,
+  My love
+
+
+My love is as a fever, longing still
+For that which longer nurseth the disease,
+Feeding on that which doth preserve the ill,
+And now shall live, I believe,
+For ever and ever and ever.
+  But it is no use to me to tell
+  To you that I will live, for my love shall live,
+  For your heart to live with thee, my heart with thee.
+  Yet I do not think that you have enough of me,
+  For I love thee more than your heart has.
+  For thy love is your spirit, my love, thy heart's love.
+  And thou, my love, my love, thy love,
+  So that I may live, to live with thee,
+
+
+O me, what eyes hath love put in my head,
+Which have no correspondence with true sight!
+Or if they have, where is my judgment fled,
+To what mind is I, or what I am,
+Where can I find my voice or my heart?
+Or what sight that sweet flower has in my breast,
+Who hath the gift of my love,
+Which I can use to no good purpose;
+Or what love that loves me leaves me,
+That is my mistress' worth,
+Which I cannot save from myself.
+  I give you a happy book,
+  I give you a fearful one,
+  I give you a curse;
+  I steal your works, and give you to my death,
+  I give you to my body
+
+
+Canst thou, O cruel, say I love thee not
+When I against myself with thee partake?
+Do I not think on thee when I forgot thee,
+And then do I make thee forget me,
+When thou art not my true love?
+For me to thee have thou my love,
+But to thee I love thee as thy part.
+   And if I should be in thee, thou wouldst be with me,
+  For in thee I am my true love,
+  And not in thee is thy true love.
+   But in thee I am thy true love,
+  And not in thee is thy true love.
+    Therefore I love thee so much that I have forgotten thee,
+  And thou so much that
+
+
+O, from what power hast thou this powerful might
+With insufficiency my heart to sway?
+To make me give the lie to my true sight,
+To prove my worth in your beauty,
+And to make me an impostor,
+To make me a slave of your mind,
+To make me a friend of your soul,
+  To make me a laborer of your heart,
+  To make me a slave of your body,
+  To make me a slave of your mind,
+  To make me a friend of your body,
+  To make me a slave of your body,
+  To make me a slave of your mind,
+  To make me a slave of your body,
+  To make me a slave of your mind,
+
+
+Love is too young to know what conscience is;
+Yet who knows not conscience is born of love?
+Then, gentle cheater, urge not my amiss,
+For love's love is mine, but yours is mine.
+Give me no love of love, for love's love is mine, but yours is mine.
+  But my love is mine, and mine is mine.
+  And love's love is mine and mine is mine.
+   Give me love of love, for love's love is mine, but yours is mine.
+  And my love is mine, and mine is mine.
+   For love's love is mine, but mine is mine.
+  And love's love is mine, but mine is mine.
+   And love's
+
+
+In loving thee thou know'st I am forsworn,
+But thou art twice forsworn, to me love swearing;
+In act thy bed-vow broke, and new faith torn
+With thy worst vice and thine.
+For now thy shame is upon me,
+And I say, thou art no more to me
+Than I am, though thou live with me.
+  And yet thou art all that I love,
+  And that I love thee so much that thou write
+  For my use is the secret of thy life,
+  For all my sins are to thee, and I love thee
+  To myself in the eyes of thy heart.
+  And that, for a love so good,
+  I am not so dear to thee,  If I could bear to
+
+
+Cupid laid by his brand and fell asleep.
+A maid of Dian's this advantage found,
+And his love-kindling fire did quickly steep
+Upon her heart, and then the goddess doth shine
+The clouds of her youth.
+In this maiden love is all her beauty,
+And in her the beauty of her mind is she.
+O, I, my love, love me to love thee,
+The sweetest of all sweet lovers,
+And yet this beauty, that thy sweet love
+Is most dear to me, hath the greatest love
+With her, and then her love doth decay.
+  This love doth love me so much that it must die.
+  For then thou dost die, that thy love may be
+ 
+
+
+The little love-god, lying once asleep,
+Laid by his side his heart-inflaming brand,
+Whilst many nymphs that vowed chaste life to keep
+The holy flock, still so long dead,
+Were now their eyes and hearts a prey,
+And for the sake of their love's sake did they deceive.
+And, to this day, I see how, though your love is dead,
+Who can hold them captive for their love's sake?
+  For, though you were once a priest,
+  I shall still be your love.
+  But I love you too, for that which I did love.
+  I love you with all my heart, and with all my heart,
+  That I love you with all my soul,
+  And
+
+
+When my love swears that she is made of truth,
+I do believe her, though I know she lies,
+That she might think me some untutored youth,
+And for her reason must I prove my truth,
+And give proof of her truth to my love's best,
+For the world's love's will not give her my true love's truth.
+  But yet, after all my love's love's love's truth,
+  I cannot deny that she is true,
+  And I do not want her to make me false,
+  For by her love's truth I know that she is true.
+  Yet, this truth is not true, but is true,
+  And I swear by it that she is true.
+  And, though she may
+
+
+Two loves I have, of comfort and despair,
+That like two spirits do suggest me still.
+My better angel is a man right fair,
+But my worse is a dull spotless beauty.
+He hath but a beard and a brow,
+Which though he bear the name of a man,
+Nor of any color, nor of any name,
+Nor of any true name, but of a very short and
+Excessful name.
+But his name is my love, my true love,
+Which, when I love him, I shall love his true love.
+                                      
+
+

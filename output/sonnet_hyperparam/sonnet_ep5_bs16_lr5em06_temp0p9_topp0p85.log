@@ -1,0 +1,267 @@
+2026-05-11 20:33:24.704970: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+train-0:   0%|          | 0/9 [00:00<?, ?it/s]train-0:  11%|█         | 1/9 [00:01<00:08,  1.09s/it]train-0:  22%|██▏       | 2/9 [00:01<00:06,  1.07it/s]train-0:  33%|███▎      | 3/9 [00:02<00:05,  1.10it/s]train-0:  44%|████▍     | 4/9 [00:03<00:04,  1.16it/s]train-0:  56%|█████▌    | 5/9 [00:04<00:03,  1.20it/s]train-0:  67%|██████▋   | 6/9 [00:05<00:02,  1.18it/s]train-0:  78%|███████▊  | 7/9 [00:06<00:01,  1.15it/s]train-0:  89%|████████▉ | 8/9 [00:06<00:00,  1.17it/s]train-0: 100%|██████████| 9/9 [00:07<00:00,  1.55it/s]train-0: 100%|██████████| 9/9 [00:07<00:00,  1.26it/s]
+Epoch 0: train loss :: 5.046.
+save the model to 0_5-5e-06-sonnet.pt
+train-1:   0%|          | 0/9 [00:00<?, ?it/s]train-1:  11%|█         | 1/9 [00:00<00:06,  1.21it/s]train-1:  22%|██▏       | 2/9 [00:01<00:05,  1.20it/s]train-1:  33%|███▎      | 3/9 [00:02<00:05,  1.20it/s]train-1:  44%|████▍     | 4/9 [00:03<00:04,  1.22it/s]train-1:  56%|█████▌    | 5/9 [00:04<00:03,  1.18it/s]train-1:  67%|██████▋   | 6/9 [00:05<00:02,  1.15it/s]train-1:  78%|███████▊  | 7/9 [00:05<00:01,  1.14it/s]train-1:  89%|████████▉ | 8/9 [00:06<00:00,  1.12it/s]train-1: 100%|██████████| 9/9 [00:07<00:00,  1.48it/s]train-1: 100%|██████████| 9/9 [00:07<00:00,  1.26it/s]
+Epoch 1: train loss :: 4.900.
+save the model to 1_5-5e-06-sonnet.pt
+train-2:   0%|          | 0/9 [00:00<?, ?it/s]train-2:  11%|█         | 1/9 [00:00<00:07,  1.14it/s]train-2:  22%|██▏       | 2/9 [00:01<00:06,  1.10it/s]train-2:  33%|███▎      | 3/9 [00:02<00:05,  1.12it/s]train-2:  44%|████▍     | 4/9 [00:03<00:04,  1.12it/s]train-2:  56%|█████▌    | 5/9 [00:04<00:03,  1.11it/s]train-2:  67%|██████▋   | 6/9 [00:05<00:02,  1.12it/s]train-2:  78%|███████▊  | 7/9 [00:06<00:01,  1.11it/s]train-2:  89%|████████▉ | 8/9 [00:07<00:00,  1.10it/s]train-2: 100%|██████████| 9/9 [00:07<00:00,  1.46it/s]train-2: 100%|██████████| 9/9 [00:07<00:00,  1.21it/s]
+Epoch 2: train loss :: 4.800.
+save the model to 2_5-5e-06-sonnet.pt
+train-3:   0%|          | 0/9 [00:00<?, ?it/s]train-3:  11%|█         | 1/9 [00:00<00:07,  1.07it/s]train-3:  22%|██▏       | 2/9 [00:01<00:06,  1.11it/s]train-3:  33%|███▎      | 3/9 [00:02<00:05,  1.10it/s]train-3:  44%|████▍     | 4/9 [00:03<00:04,  1.07it/s]train-3:  56%|█████▌    | 5/9 [00:04<00:03,  1.06it/s]train-3:  67%|██████▋   | 6/9 [00:05<00:02,  1.08it/s]train-3:  78%|███████▊  | 7/9 [00:06<00:01,  1.09it/s]train-3:  89%|████████▉ | 8/9 [00:07<00:00,  1.11it/s]train-3: 100%|██████████| 9/9 [00:07<00:00,  1.48it/s]train-3: 100%|██████████| 9/9 [00:07<00:00,  1.20it/s]
+Epoch 3: train loss :: 4.734.
+save the model to 3_5-5e-06-sonnet.pt
+train-4:   0%|          | 0/9 [00:00<?, ?it/s]train-4:  11%|█         | 1/9 [00:00<00:07,  1.04it/s]train-4:  22%|██▏       | 2/9 [00:01<00:06,  1.08it/s]train-4:  33%|███▎      | 3/9 [00:02<00:05,  1.12it/s]train-4:  44%|████▍     | 4/9 [00:03<00:04,  1.13it/s]train-4:  56%|█████▌    | 5/9 [00:04<00:03,  1.11it/s]train-4:  67%|██████▋   | 6/9 [00:05<00:02,  1.11it/s]train-4:  78%|███████▊  | 7/9 [00:06<00:01,  1.12it/s]train-4:  89%|████████▉ | 8/9 [00:07<00:00,  1.12it/s]train-4: 100%|██████████| 9/9 [00:07<00:00,  1.47it/s]train-4: 100%|██████████| 9/9 [00:07<00:00,  1.22it/s]
+Epoch 4: train loss :: 4.635.
+Generating several output sonnets...
+Those lips that Love's own hand did make
+Breathed forth the sound that said "I hate"
+To me that languished for her sake;se lips that Love's own hand did make
+Breathed forth the sound that said "I hate"
+To me that languished for her sake;
+And I knew that he that liked to love me would "know me better"
+I loved not the cry of her that is "why I must love thee, that thou loveest me."
+As if the world, when the fountain of happiness shone forth,
+O how she treated me, that she would "died of love"
+And it might have endured if she had treated me with one heart
+Now that she had forgotten all my years,
+  In my midst I found that the love of myself still drew me to myself
+That she did not always remember
+  But gave me so much praise that I
+
+
+Poor soul, the center of my sinful earth,
+Pressed with these rebel powers that thee array,
+Why dost thou pine within and suffer dearth,r soul, the center of my sinful earth,
+Pressed with these rebel powers that thee array,
+Why dost thou pine within and suffer dearth,
+That then and there playeth on the kiss of my cheek,
+Which, after thy humble mind,
+
+Gives thee that lovely sense of thy love,
+That thou shalt not hate.
+Ramp me down on my breast, how thou joyst mine fort
+When in thee walk I march,
+That wild spirit, when I shine,
+Devourest within me.
+But in thy sleep thou hast hoped
+That to burst me and to rage,
+Though thou, at last, have slain me.
+My journey is, on thy giver's account,
+Yet it is in thee's
+
+
+My love is as a fever, longing still
+For that which longer nurseth the disease,
+Feeding on that which doth preserve the ill,love is as a fever, longing still
+For that which longer nurseth the disease,
+Feeding on that which doth preserve the ill,
+The heart a part of the heavenly image in me.
+Seek my forgiveness, and for ever my love is renewed.
+1B. In this manner is our hope fulfilled.
+A happy man is created not only in some vain image, but of perfect truth.
+Sufficient light and full of joy receive their goods,
+While the sweet and pure light that the souls of men are dreary;
+This vanity and corruption in God bequeathed upon them,
+Though they speak so in vain.
+ In vain is it often to praise or praise with penance;
+Yet, when a pleasure is
+
+
+save the model to 4_5-5e-06-sonnet.pt
+Those lips that Love's own hand did make
+Breathed forth the sound that said "I hate"
+To me that languished for her sake;
+And my heart's glory I see on her pale brow.
+But I see her pale and sweetly.
+She is proud and sweet and beautiful,
+Her lips are sweet and delicate.
+She won't forget her name's name's loss.
+She won't forget that as often as her heart's love
+Is broken, with those words I once said to her:
+But if I be still, she'll always stay.
+ She will never forget that my beauty was so full of passion,
+That when her tears, so good and sweet, and her love so strong,
+Could I forget that this tender
+
+
+Poor soul, the center of my sinful earth,
+Pressed with these rebel powers that thee array,
+Why dost thou pine within and suffer dearth,
+Pursued with such sagacity, a bold death
+To frighten thy father, and to torment thy mother?
+The remedy of this reproof,
+Which hast so few, and the most dreary woes
+At the door of the poor woman's griefs,
+Cannot yet render justice to her;
+But while thou turnest thy power away,
+Hast thou also make thy accuser understand
+Which thou hast so richly suspected,
+ Which if thou thoughtest he would prove
+To her true maid: thy gift may then be,
+No more, neither more, nor more.
+But
+
+
+My love is as a fever, longing still
+For that which longer nurseth the disease,
+Feeding on that which doth preserve the ill,
+His love and thy love with me don't cease,
+ But renew my love, and renew my love,
+And bear my love upon my dead body,
+To remind my love of thy own, to me do
+That which he may not suffer, nor cannot even inflict
+That which was beloved to him by any one else,
+Yet he is always open to me, so that no sin shall follow,
+ And his love, in his own love, to hear
+Of mine, or mine alone, and be gracious to him,
+He whose love is not mine, but his own.
+A loving love is
+
+
+O me, what eyes hath love put in my head,
+Which have no correspondence with true sight!
+Or if they have, where is my judgment fled,
+And when I come to learn my thoughts?
+For, when I was born I doth not only know that they were young,
+But also that their growth so much tempted me;
+And since they were so young, that my brother,
+Which had no great view, did not live.
+I was also so young that it made me to live my own pleasure;
+Yet, when I am so old that I be fit to die,
+I see the tears my eyes, which were then seen
+Which were only flowers, when they should be pale;
+But when they should rise, I still see,
+
+
+Canst thou, O cruel, say I love thee not
+When I against myself with thee partake?
+Do I not think on thee when I forgot thou?
+Whose grief is not yet a gift,
+Where is not my sorrow when I know not?
+Thou art one of those who think only of my kindness,
+When I feel thee struggling and watching;
+Where I know no shame before my eyes,
+That even thou are not yet worthy of shame.
+Thou is one of those who hold all respect for me,
+ Who pretend to do with my words as I do.
+For, as with other poets, I write with a tongue
+While thou hast done thy duty.
+Thou art one of those who feel one thing neither when thou
+
+
+O, from what power hast thou this powerful might
+With insufficiency my heart to sway?
+To make me give the lie to my true sight,
+And humbly thus thou draw,
+To the strong are there born.
+But thy true sight was once more
+Alas, O father, thou betrothed me,
+ The best of my kind was then,
+And with the greatest promise I should
+As well be free from the burden of duty.
+And now, O father, why,
+Why, why, why, why, why, why, why, why, why,
+
+Though my heart to thee was so great,
+ How old was it when I was lost,
+
+And when, seeing thee, I think now to no one
+
+
+Love is too young to know what conscience is;
+Yet who knows not conscience is born of love?
+Then, gentle cheater, urge not my amiss,
+You to do justice by my will, to live like a woman;
+Like a citizen of Christ, in Christ, to live by his free will.
+The sins of love are forgiven;
+And of love's honour is that of light,
+To fulfil their promises and to enter in the most unutterable joy.
+Woe to you, while I be yet ready,
+To live a righteous man's life, or to be ungrateful,
+Where the love of God remains?
+The love of love gives not my revenge,
+But to everlasting days of joy;
+Which, though my soul long
+
+
+In loving thee thou know'st I am forsworn,
+But thou art twice forsworn, to me love swearing;
+In act thy bed-vow broke, and new faith torn;
+And to thee this inseperenity didt grow:
+For this I didst dream, that I might love thee.
+Thou knowest that when thou wert barest thy cleft,
+I cannot weep, but thy tears take me to thee.
+But thou art that in love that doth cry.
+A kind be when thou lovest thyself,
+That he willeth not to hear thee ask.
+And yet when thou hast my desire,
+ Thou dost speak of my iniquity,
+ In pity that he might not offer me up.
+
+A moment
+
+
+Cupid laid by his brand and fell asleep.
+A maid of Dian's this advantage found,
+And his love-kindling fire did quickly steep her.
+He was never troubled, but was never vexed,
+To his tongue that sent his love waves.
+A maid of Dian's that was her lover's mistress was his lover's lover's mistress,
+And his tongue may send his love's tears so.
+He in his haste with love's love lingered and was the sight,
+And never in thy-pleasure did his tongue return.
+The foolish and mighty that he, and her master,
+He, saw that he had a devil's cruelty and a worthy lust,
+And when he saw that he had been so master,
+His very
+
+
+The little love-god, lying once asleep,
+Laid by his side his heart-inflaming brand,
+Whilst many nymphs that vowed chaste life to keep
+Possessed him of all his plenitude;
+And when the love-begotten loved him come,
+His daily praise grows, and, like the divine,
+Sings forth, in the body with such lovely vivacity,
+But yet not without time to describe his name.
+And so he read, as when he could not,
+Doth do most wonderfully to describe the gifts and thanksgiving of that love.
+When he heard a song of the beauty of his loved ones,
+He began, with a smile of satisfaction, to sing it out;
+And then the chorus rang, like
+
+
+When my love swears that she is made of truth,
+I do believe her, though I know she lies,
+That she might think me some untutored youth,
+And tell me how she shall look upon me,
+On earth to bind her eyes to me,
+Her as in an everlasting fire, and to revivify my soul.
+I do not wish, therefore, for a human sight,
+That the eyes of my youth should leave the day to lie.
+Yet how of her eyes could I judge her so much?
+Thy eyes alone love; nor did I see them,
+That they could seem so insignificant,
+That with their love I had not myself,
+ To be called my dear children.
+When, too, in the love of this man's
+
+
+Two loves I have, of comfort and despair,
+That like two spirits do suggest me still.
+My better angel is a man right fair,
+He is even fair to love that fair maiden that has come
+For her sake, who must I love better than her,
+So sweetly and lovingly like the dear wretch that she bears
+For what she has, and that whom she loves can be little more
+Or so to me, as far from the love that I have.
+Of this I love to the greatest love
+Like I know that this truly is my,
+ I cannot be that which has with me, but I cannot
+This kindness as mine own is the best I can
+That by this I love to be truly worthy of love.
+
+
+
