@@ -189,7 +189,7 @@ def test(args):
     else torch.device("mps") if args.use_gpu and torch.backends.mps.is_available()
     else torch.device("cpu")
 )
-  saved = torch.load(args.filepath)
+  saved = torch.load(args.filepath, weights_only=False)
 
   model = ParaphraseGPT(saved['args'])
   model.load_state_dict(saved['model'])
