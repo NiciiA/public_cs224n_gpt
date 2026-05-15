@@ -1,0 +1,20 @@
+[
+  {
+    "name": "run0_flash_ep2_lr5em06",
+    "minutes": 72.42919987042745,
+    "returncode": 0,
+    "log": "logs/run0_flash_ep2_lr5em06.log",
+    "attention_type": "flash",
+    "epochs": 2,
+    "lr": 5e-06
+  },
+  {
+    "name": "run1_flash_ep2_lr2em05",
+    "minutes": 72.29173483053843,
+    "returncode": 0,
+    "log": "logs/run1_flash_ep2_lr2em05.log",
+    "attention_type": "flash",
+    "epochs": 2,
+    "lr": 2e-05
+  }
+]
